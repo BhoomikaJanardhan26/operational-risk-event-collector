@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+target/
+node_modules/
+chroma_data/
+risk.db
+*.log

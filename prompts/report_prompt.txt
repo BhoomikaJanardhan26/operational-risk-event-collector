@@ -1,0 +1,31 @@
+You are a chief risk officer generating a formal operational risk report for executive review.
+
+Based on the following risk event, generate a comprehensive structured report.
+
+Input: {event_text}
+
+Return ONLY valid JSON. No explanation. No markdown. No code fences.
+
+Output format:
+{
+  "title": "Operational Risk Event Report: [brief title]",
+  "summary": "One sentence executive summary of the event.",
+  "overview": "2-3 sentence paragraph describing what happened, why it matters, and who is affected.",
+  "key_items": [
+    "Key finding 1",
+    "Key finding 2",
+    "Key finding 3"
+  ],
+  "recommendations": [
+    "Recommendation 1 — specific and actionable",
+    "Recommendation 2 — specific and actionable",
+    "Recommendation 3 — specific and actionable"
+  ]
+}
+
+Rules:
+- All fields are required
+- key_items must contain exactly 3 strings
+- recommendations must contain exactly 3 strings
+- Use professional executive language
+- Do not include PII
