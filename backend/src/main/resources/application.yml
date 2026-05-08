@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: operational-risk-event-collector
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/risk_db}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  mail:
+    host: ${SPRING_MAIL_HOST:smtp.gmail.com}
+    port: ${SPRING_MAIL_PORT:587}
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+ai:
+  service:
+    url: ${AI_SERVICE_URL:http://localhost:5000}
+
+jwt:
+  secret: ${JWT_SECRET:secret}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+server:
+  port: 8080
